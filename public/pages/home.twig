@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <form method="post" action="/">
+        <label for="">Enter username:
+        <input type="text" name="username" value="{{ user.username }}"></label><br />
+        {% if errors.username %}
+        <p>{{ errors.username.msg }}</p>
+        {% endif %}
+        <label for="">Enter password:
+        <input type="password" name="password" value="{{ user.password }}"></label><br />
+         {% if errors.password %}
+         <p>{{ errors.password.msg }}</p>
+         {% endif %}
+        <label for="">Re-enter password:
+        <input type="password" name="rpassword"></label><br />
+        {% if errors.rpassword %}
+        <p>{{ errors.rpassword.msg }}</p>
+        {% endif %}
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
